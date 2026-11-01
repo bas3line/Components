@@ -18,7 +18,7 @@ React components drawn in code: isometric servers, racks, terminals and maps.<br
 SVG and CSS, no images, no animation library. Copy a folder and make it yours.<br>
 <sub>The map's land is the one exception: dots painted on a canvas.</sub>
 
-[components](#components) · [use one](#use-one) · [run the gallery](#run-the-gallery) · [how it's built](#how-its-built) · [contributing](CONTRIBUTING.md)
+[live gallery](https://bas3line.github.io/Components/) · [components](#components) · [use one](#use-one) · [run the gallery](#run-the-gallery) · [how it's built](#how-its-built) · [contributing](CONTRIBUTING.md)
 
 [![by @bas3line](https://img.shields.io/badge/by-%40bas3line-181717?logo=github&logoColor=white)](https://github.com/bas3line)
 [![CI](https://github.com/bas3line/Components/actions/workflows/ci.yml/badge.svg)](https://github.com/bas3line/Components/actions/workflows/ci.yml)
@@ -78,6 +78,8 @@ The imports use the `@/` alias, as Next.js and shadcn projects do; in any other 
 `ServerIsland`, `ServerRack`, `RackModule` and the primitives render on the server; the rest are client components (`"use client"`), so all of them drop straight into the Next.js app router.
 
 ## Run the gallery
+
+It's live at [bas3line.github.io/Components](https://bas3line.github.io/Components/). To run it yourself:
 
 ```sh
 git clone https://github.com/bas3line/Components
@@ -460,6 +462,9 @@ demos/<name>.tsx     each component dressed for its picture
 app/                 the gallery (/) and one page per component (/preview/<name>)
 registry.ts          the list the gallery shows
 scripts/shoot.mjs    takes the README pictures with Playwright
+.github/workflows/
+  ci.yml             typecheck, lint and build on every pull request
+  pages.yml          the gallery as a static export, deployed to GitHub Pages from main
 ```
 
 React 19, Tailwind CSS 4, TypeScript, and Next.js for the gallery. The drawings are SVG with their geometry computed in code, except the map's land, which is dots painted on a canvas. The motion is CSS keyframes: seven of the nine ship theirs inside the component as a React 19 `<style>`, which lands in the head once however many copies are on the page, and `blade-rack` and `dot-map` use the ones in `tokens.css`. Nothing is random at render, so the server and the browser draw the same picture. Example addresses come from the documentation ranges, and every product, plan and price in the demos is made up.
