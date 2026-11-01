@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ComponentType } from "react";
 import { Kicker } from "@/components/primitives/Kicker";
 import BladeRack from "@/demos/blade-rack";
@@ -62,9 +63,10 @@ export default function Home() {
                   {entry.name}
                 </h2>
                 <p className="flex gap-5 font-mono text-[12px] text-ink-3">
-                  <a href={`/preview/${entry.slug}`} className="hover:text-ink">
+                  {/* Link, so the GitHub Pages base path is added. */}
+                  <Link href={`/preview/${entry.slug}`} className="hover:text-ink">
                     on its own →
-                  </a>
+                  </Link>
                   <a href={`${REPO}/tree/main/components/${entry.slug}`} className="hover:text-ink">
                     source →
                   </a>
