@@ -1,0 +1,26 @@
+name: Bug
+description: A component looks or behaves wrong.
+labels: [bug]
+body:
+  - type: input
+    id: which
+    attributes:
+      label: Which component
+      placeholder: server-island, typed-terminal, dot-map
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you saw. A screenshot helps, and so do the props you passed.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Setup
+      description: Framework and version, browser and version, and the window size.
+      placeholder: Next.js 16 on Safari 19, macOS 27, 1440 x 900
+    validations:
+      required: true

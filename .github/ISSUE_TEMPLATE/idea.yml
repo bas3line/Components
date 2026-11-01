@@ -1,0 +1,11 @@
+name: Idea
+description: A component you'd like to see, or something one should do.
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What it is, and where you'd use it. A sketch or reference helps.
+    validations:
+      required: true
